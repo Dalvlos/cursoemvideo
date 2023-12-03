@@ -7,6 +7,14 @@ e a segunda função vai mostrar a soma entre
 todos os valores PARES sorteados pela função
 anterior.
 
+make a program that has a list called
+numbers and two functions called sorteia() and
+sumPar(). The first function will draw 5
+numbers and will place them in a list
+and the second function will show the sum between
+all EVEN values drawn by the function
+previous.
+
 """
 from random import randint 
 from time import sleep
