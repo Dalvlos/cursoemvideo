@@ -1,0 +1,7 @@
+nome = str(input("Escreva um nome: ")).strip()
+nomeM = (nome.upper())
+nomeMin = (nome.lower())
+print(nomeM)
+print(nomeMin)
+print("Seu nome possui {} letras".format(len(nome)- nome.count(" ")))
+print("Seu primeiro nome possui {} letras".format(nome.find(" ")))
