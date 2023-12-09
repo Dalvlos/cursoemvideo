@@ -12,5 +12,5 @@ for c in range(1, 7):
     if num % 2 ==0:
         soma = soma + num
         cont += 1
-print("Voce informou {} numero(s) par(es) e a soma foi {}".format(cont, soma))
+print(f'Voce informou {cont} numero(s) par(es) e a soma foi {soma}.')
 
