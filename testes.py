@@ -122,7 +122,7 @@ elif n >= 2 and n <= 5:
 elif n >= 6 and n <= 20:
     print('Weird')
 else:
-    print('Not Weird')"""
+    print('Not Weird')
     
 def numeros_primos_intervalo(inicio, fim):
     numeros_primos = []
@@ -141,3 +141,75 @@ def numeros_primos_intervalo(inicio, fim):
 
 primos_ate_100 = numeros_primos_intervalo(1, 100)
 print(primos_ate_100)
+
+def cadastro():
+    nome = input("Digite seu nome: ")
+    idade = input("Digite sua idade: ")
+    sexo = input("Digite seu sexo: ")
+    email = input("Digite seu endereço de email: ")
+    
+    dados_usuario = {
+        'nome': nome,
+        'idade': idade,
+        'sexo': sexo,
+        'email': email
+    }
+    
+    return dados_usuario
+
+# Chamando a função e recebendo os dados do usuário
+informacoes_usuario = cadastro()
+
+# Exibindo os dados coletados
+print("Dados do usuário:")
+for chave, valor in informacoes_usuario.items():
+    print(f"{chave}: {valor}")
+"""
+import sqlite3
+
+# Conectar ao banco de dados (ou criar um novo se não existir)
+conexao = sqlite3.connect('dados_usuarios.db')
+
+# Criar uma tabela para armazenar os dados do usuário
+conexao.execute('''
+    CREATE TABLE IF NOT EXISTS usuarios (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        idade INTEGER NOT NULL,
+        sexo TEXT NOT NULL,
+        email TEXT NOT NULL
+    )
+''')
+
+def cadastro():
+    nome = input("Digite seu nome: ")
+    idade = int(input("Digite sua idade: "))
+    sexo = input("Digite seu sexo: ")
+    email = input("Digite seu endereço de email: ")
+    
+    # Inserir os dados na tabela
+    conexao.execute('''
+        INSERT INTO usuarios (nome, idade, sexo, email)
+        VALUES (?, ?, ?, ?)
+    ''', (nome, idade, sexo, email))
+
+    # Commit para salvar as mudanças no banco de dados
+    conexao.commit()
+    
+    return {
+        'nome': nome,
+        'idade': idade,
+        'sexo': sexo,
+        'email': email
+    }
+
+# Chamando a função para coletar os dados do usuário
+informacoes_usuario = cadastro()
+
+# Exibindo os dados coletados
+print("Dados do usuário:")
+for chave, valor in informacoes_usuario.items():
+    print(f"{chave}: {valor}")
+
+# Fechar a conexão com o banco de dados quando não for mais necessário
+conexao.close()
