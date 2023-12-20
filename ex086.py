@@ -24,5 +24,6 @@ for liner in range(3):
     matriz.append(linha) 
     
 print("Matriz preenchida:")
+
 for linha in matriz:
     print(linha)
