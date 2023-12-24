@@ -51,6 +51,7 @@ print(f'A soma de todos os valores pares digitados: {somaPar}')
 print(f'A soma dos valores da terceira coluna: {somaTerceiraLista}')
 print(f'O maior valor da segunda coluna: {maiorValor}')
 
+
 """
 
 Resolucao da aula do curso em video:
