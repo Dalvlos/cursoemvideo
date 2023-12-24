@@ -213,10 +213,13 @@ for chave, valor in informacoes_usuario.items():
 
 # Fechar a conexão com o banco de dados quando não for mais necessário
 conexao.close()
-"""
+
 
 lista_principal = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 resultado = [[valor * 2 if valor % 2 == 0 else valor * 3 for valor in lista] for lista in lista_principal]
 
 print(resultado)
+
+"""
+
