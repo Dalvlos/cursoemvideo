@@ -44,8 +44,6 @@ for iteracao in segundaColuna:
     if iteracao > maiorValor:
         maiorValor = iteracao
        
-        
-    
 
 print(f'A soma de todos os valores pares digitados: {somaPar}')
 print(f'A soma dos valores da terceira coluna: {somaTerceiraLista}')
