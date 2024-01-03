@@ -221,5 +221,9 @@ resultado = [[valor * 2 if valor % 2 == 0 else valor * 3 for valor in lista] for
 
 print(resultado)
 
+
+Push teste in Ubuntu linux at 2024 january 3
+
 """
+
 
