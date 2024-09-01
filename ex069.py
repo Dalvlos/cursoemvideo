@@ -9,18 +9,47 @@ b- Quantos homens foram cadastrados.
 c- Quantas mulheres tem menos de 20 anos.
 
 """
-controle = str("s").upper()
-while controle == "s":
-    nome = str(input("Informe seu nome: "))
-    idade = int(input("Informe sua idade: "))
-    sexo = str(input("informe o sexo M/F: ")).upper()
-    continuar_execucao = str(input("deseja continuar S/N: ")).upper()
-    if continuar_execucao == "S":
-        controle = "S"
-    else:
-        controle = "N"
-    print(nome, idade, sexo)
+data = []
+control = True
+while control:
+    
+    name = str(input("Name: ")).upper()
+    age = int(input("Age: "))
+    gender = str(input("Gender: ")).upper()
+    
+    userRegistration = {
+        "name" : name,
+        "age" : age,
+        "gender" : gender,
+    }
+
+    data.append(userRegistration)
+
+    keepInsertData = str(input("Do you wanna insert new data? Press y/n ")).lower()
+    if keepInsertData.lower() == "n":
+        control = False
+
+for userRegistration in data:
+    print(userRegistration)
+
+counterMen = 0
+counterAge = 0
+counterWomanLess20 = 0
+
+for item in data:
+    genders = item.get("gender", " ").lower()
+    if genders == "male":
+        counterMen += 1
+
+    ages = item.get("age", " ")
+    if ages >= 18:
+        counterAge += 1
+
+    ageGender = {'idade': item.get("age"), 'genero': item.get("gender")}
+    if ageGender['genero'].lower() == "female" and ageGender['idade'] <= 20:
+        counterWomanLess20 += 1
 
 
-
-
+print(f"There is {counterAge} people over 18 registered.")
+print(f"There is {counterMen} men registered.")
+print(f"There is {counterWomanLess20} women less than 20 years old.")
