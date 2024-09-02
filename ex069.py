@@ -32,24 +32,24 @@ while control:
 for userRegistration in data:
     print(userRegistration)
 
-counterMen = 0
-counterAge = 0
-counterWomanLess20 = 0
+countMan = 0
+countAge = 0
+countWomanLess20 = 0
 
 for item in data:
     genders = item.get("gender", " ").lower()
     if genders == "male":
-        counterMen += 1
+        countMan += 1
 
     ages = item.get("age", " ")
     if ages >= 18:
-        counterAge += 1
+        countAge += 1
 
     ageGender = {'idade': item.get("age"), 'genero': item.get("gender")}
     if ageGender['genero'].lower() == "female" and ageGender['idade'] <= 20:
-        counterWomanLess20 += 1
+        countWomanLess20 += 1
 
 
-print(f"There is {counterAge} people over 18 registered.")
-print(f"There is {counterMen} men registered.")
-print(f"There is {counterWomanLess20} women less than 20 years old.")
+print(f"There is {countAge} people over 18 registered.")
+print(f"There is {countMan} men registered.")
+print(f"There is {countWomanLess20} women less than 20 years old.")
