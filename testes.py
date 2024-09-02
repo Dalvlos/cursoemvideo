@@ -225,5 +225,3 @@ print(resultado)
 Push teste in Ubuntu linux at 2024 january 3
 
 """
-
-
